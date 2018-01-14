@@ -10,7 +10,7 @@ import UIKit
 
 class AppIntroViewController: UIViewController {
 
-  public var dismissButton: UIButton?
+  @IBOutlet public var dismissButton: UIButton!
   public var dismissButtonTapHandler: (() -> Void)?
   
   @IBAction public func dismissButtonTapped() {

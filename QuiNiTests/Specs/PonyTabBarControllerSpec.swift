@@ -1,6 +1,7 @@
 import Quick
 import Nimble
-import Pony
+
+@testable import QuiNi
 
 class PonyTabBarControllerSpec: QuickSpec {
   override func spec() {
@@ -12,30 +13,34 @@ class PonyTabBarControllerSpec: QuickSpec {
         
         beforeEach {
           // Arrange:
-          NSUserDefaults.standardUserDefaults().setBool(false, forKey: "appIntroHasBeenPresented")
-          let storyboard = UIStoryboard(name:"Main", bundle: NSBundle.mainBundle())
+          UserDefaults.standard.set(false, forKey: "appIntroHasBeenPresented")
+          let storyboard = UIStoryboard(name:"Main", bundle: Bundle.main)
           tabBarController = storyboard.instantiateInitialViewController() as! PonyTabController
           
           // Act:
-          UIApplication.sharedApplication().keyWindow?.rootViewController = tabBarController
+          UIApplication.shared.keyWindow?.rootViewController = tabBarController
         }
         
         it("should be presented"){
           // Assert:
-          expect(tabBarController.presentedViewController).toEventually(beAnInstanceOf(AppIntroViewController))
+          
+          if let tabC = tabBarController {
+          
+            expect(tabC.presentedViewController).toEventually(be(AppIntroViewController.self()))
+          }
         }
         
         context("and dissmiss button was tapped") {
           
-          let userDefaults = NSUserDefaults.standardUserDefaults()
+          let userDefaults = UserDefaults.standard
           var appIntroViewController: AppIntroViewController?
           
           beforeEach {
             // Arrange:
-            userDefaults.setBool(false, forKey: "appIntroHasBeenPresented")
+            userDefaults.set(false, forKey: "appIntroHasBeenPresented")
             
             waitUntil { done in
-                NSThread.sleepForTimeInterval(0.5)
+              Thread.sleep(forTimeInterval: 0.5)
                 done()
             }
            
@@ -43,17 +48,24 @@ class PonyTabBarControllerSpec: QuickSpec {
             tabBarController.viewDidAppear(false)
             
             waitUntil { done in
-                NSThread.sleepForTimeInterval(0.5)
+              Thread.sleep(forTimeInterval: 0.5)
                 done()
             }
             
-            var appIntroViewController = tabBarController.presentedViewController as! AppIntroViewController
-            appIntroViewController.dismissButton!.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+            if let tabC = tabBarController {
+
+              var appIntroViewController = tabBarController.presentedViewController as! AppIntroViewController
+              appIntroViewController.dismissButton!.sendActions(for: .touchUpInside)
+            }
           }
           
           it("should set appIntroHasBeenPresented to true"){
             // Assert:
-            expect(userDefaults.boolForKey("appIntroHasBeenPresented")).to(beTrue())
+            
+            if let tabC = tabBarController {
+            
+              expect(userDefaults.bool(forKey: "appIntroHasBeenPresented")).to(beTrue())
+            }
           }
           
           it("should dismiss app intro"){

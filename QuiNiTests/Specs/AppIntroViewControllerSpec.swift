@@ -1,12 +1,13 @@
 import Quick
 import Nimble
-import Pony
+
+@testable import QuiNi
 
 class AppIntroViewControllerSpec: QuickSpec {
   override func spec() {
     
     var viewController: AppIntroViewController!
-    let userDefaults = NSUserDefaults.standardUserDefaults()
+    let userDefaults = UserDefaults.standard
     
     describe("dismissButtonTapped"){
       
@@ -15,42 +16,45 @@ class AppIntroViewControllerSpec: QuickSpec {
         var tapHandlerTriggered: Bool!
         
         beforeEach {
-          let storyboard = UIStoryboard(name: "Main", bundle:NSBundle.mainBundle())
-          viewController = storyboard.instantiateViewControllerWithIdentifier("appIntroViewControllerID") as! AppIntroViewController
+          let storyboard = UIStoryboard(name: "Main", bundle:Bundle.main)
+          viewController = storyboard.instantiateViewController(withIdentifier: "appIntroViewControllerID") as! AppIntroViewController
           
-          let rootViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
+          let rootViewController = UIApplication.shared.keyWindow!.rootViewController!
           
           if rootViewController.presentedViewController != nil {
             // Setting to true to avoid the app intro to be presented again
-            userDefaults.setBool(true, forKey: "appIntroHasBeenPresented")
+            userDefaults.set(true, forKey: "appIntroHasBeenPresented")
             waitUntil { done in
-              rootViewController.dismissViewControllerAnimated(false){
+              rootViewController.dismiss(animated: false){
                 done()
               }
             }
           }
           
           waitUntil { done in
-            rootViewController.presentViewController(viewController, animated: false){
+            rootViewController.present(viewController, animated: false){
               done()
             }
           }
           
-          userDefaults.setBool(false, forKey: "appIntroHasBeenPresented")
+          userDefaults.set(false, forKey: "appIntroHasBeenPresented")
           
           viewController.dismissButtonTapHandler = {
             tapHandlerTriggered = true
           }
           
-          viewController.dismissButton!.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+          if let button = viewController.dismissButton {
+            
+            button.sendActions(for: .touchUpInside)
+          }
         }
         
         afterEach {
           tapHandlerTriggered = false
-          userDefaults.setBool(false, forKey: "appIntroHasBeenPresented")
-          let rootViewController = UIApplication.sharedApplication().keyWindow!.rootViewController!
+          userDefaults.set(false, forKey: "appIntroHasBeenPresented")
+          let rootViewController = UIApplication.shared.keyWindow!.rootViewController!
           waitUntil { done in
-            rootViewController.dismissViewControllerAnimated(false){
+            rootViewController.dismiss(animated: false){
               done()
             }
           }
