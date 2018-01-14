@@ -11,10 +11,12 @@
 		A07B90BA938E343206C041B3 /* Pods_QuiNiTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F1D669843BABAE40286F0DF /* Pods_QuiNiTests.framework */; };
 		BE44D8C4200B0D6E00F5B5DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8C3200B0D6E00F5B5DF /* AppDelegate.swift */; };
 		BE44D8C6200B0D6E00F5B5DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8C5200B0D6E00F5B5DF /* ViewController.swift */; };
-		BE44D8C9200B0D6E00F5B5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE44D8C7200B0D6E00F5B5DF /* Main.storyboard */; };
 		BE44D8CB200B0D6E00F5B5DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE44D8CA200B0D6E00F5B5DF /* Assets.xcassets */; };
 		BE44D8CE200B0D6E00F5B5DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE44D8CC200B0D6E00F5B5DF /* LaunchScreen.storyboard */; };
-		BE44D8D9200B0D6F00F5B5DF /* QuiNiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8D8200B0D6F00F5B5DF /* QuiNiTests.swift */; };
+		BE44D8E4200B110400F5B5DF /* AppIntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8E3200B110400F5B5DF /* AppIntroViewController.swift */; };
+		BE44D8E6200B113A00F5B5DF /* PonyTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8E5200B113A00F5B5DF /* PonyTabController.swift */; };
+		BE44D8E8200B116900F5B5DF /* BreedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8E7200B116900F5B5DF /* BreedsTableViewController.swift */; };
+		BE44D8EA200B125900F5B5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE44D8E9200B125900F5B5DF /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,13 +38,15 @@
 		BE44D8C0200B0D6E00F5B5DF /* QuiNi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuiNi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE44D8C3200B0D6E00F5B5DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE44D8C5200B0D6E00F5B5DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BE44D8C8200B0D6E00F5B5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE44D8CA200B0D6E00F5B5DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE44D8CD200B0D6E00F5B5DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE44D8CF200B0D6E00F5B5DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE44D8D4200B0D6F00F5B5DF /* QuiNiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuiNiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BE44D8D8200B0D6F00F5B5DF /* QuiNiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuiNiTests.swift; sourceTree = "<group>"; };
 		BE44D8DA200B0D6F00F5B5DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE44D8E3200B110400F5B5DF /* AppIntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIntroViewController.swift; sourceTree = "<group>"; };
+		BE44D8E5200B113A00F5B5DF /* PonyTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PonyTabController.swift; sourceTree = "<group>"; };
+		BE44D8E7200B116900F5B5DF /* BreedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsTableViewController.swift; sourceTree = "<group>"; };
+		BE44D8E9200B125900F5B5DF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F3EB59FD88AD79D430DDF3B5 /* Pods-QuiNi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuiNi.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuiNi/Pods-QuiNi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +115,10 @@
 			children = (
 				BE44D8C3200B0D6E00F5B5DF /* AppDelegate.swift */,
 				BE44D8C5200B0D6E00F5B5DF /* ViewController.swift */,
-				BE44D8C7200B0D6E00F5B5DF /* Main.storyboard */,
+				BE44D8E3200B110400F5B5DF /* AppIntroViewController.swift */,
+				BE44D8E5200B113A00F5B5DF /* PonyTabController.swift */,
+				BE44D8E9200B125900F5B5DF /* Main.storyboard */,
+				BE44D8E7200B116900F5B5DF /* BreedsTableViewController.swift */,
 				BE44D8CA200B0D6E00F5B5DF /* Assets.xcassets */,
 				BE44D8CC200B0D6E00F5B5DF /* LaunchScreen.storyboard */,
 				BE44D8CF200B0D6E00F5B5DF /* Info.plist */,
@@ -188,6 +195,7 @@
 					};
 					BE44D8D3200B0D6F00F5B5DF = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 						TestTargetID = BE44D8BF200B0D6E00F5B5DF;
 					};
@@ -217,9 +225,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE44D8EA200B125900F5B5DF /* Main.storyboard in Resources */,
 				BE44D8CE200B0D6E00F5B5DF /* LaunchScreen.storyboard in Resources */,
 				BE44D8CB200B0D6E00F5B5DF /* Assets.xcassets in Resources */,
-				BE44D8C9200B0D6E00F5B5DF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +350,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE44D8C6200B0D6E00F5B5DF /* ViewController.swift in Sources */,
+				BE44D8E4200B110400F5B5DF /* AppIntroViewController.swift in Sources */,
+				BE44D8E8200B116900F5B5DF /* BreedsTableViewController.swift in Sources */,
 				BE44D8C4200B0D6E00F5B5DF /* AppDelegate.swift in Sources */,
+				BE44D8E6200B113A00F5B5DF /* PonyTabController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,14 +376,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BE44D8C7200B0D6E00F5B5DF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BE44D8C8200B0D6E00F5B5DF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BE44D8CC200B0D6E00F5B5DF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
