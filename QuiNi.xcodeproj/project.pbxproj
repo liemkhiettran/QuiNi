@@ -17,6 +17,9 @@
 		BE44D8E6200B113A00F5B5DF /* PonyTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8E5200B113A00F5B5DF /* PonyTabController.swift */; };
 		BE44D8E8200B116900F5B5DF /* BreedsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8E7200B116900F5B5DF /* BreedsTableViewController.swift */; };
 		BE44D8EA200B125900F5B5DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE44D8E9200B125900F5B5DF /* Main.storyboard */; };
+		BE44D8F0200B15B200F5B5DF /* AppIntroViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8ED200B15B100F5B5DF /* AppIntroViewControllerSpec.swift */; };
+		BE44D8F1200B15B200F5B5DF /* BreedsTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8EE200B15B100F5B5DF /* BreedsTableViewControllerSpec.swift */; };
+		BE44D8F2200B15B200F5B5DF /* PonyTabBarControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE44D8EF200B15B100F5B5DF /* PonyTabBarControllerSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,10 @@
 		BE44D8E5200B113A00F5B5DF /* PonyTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PonyTabController.swift; sourceTree = "<group>"; };
 		BE44D8E7200B116900F5B5DF /* BreedsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsTableViewController.swift; sourceTree = "<group>"; };
 		BE44D8E9200B125900F5B5DF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BE44D8EC200B15B000F5B5DF /* QuiNiTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QuiNiTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		BE44D8ED200B15B100F5B5DF /* AppIntroViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppIntroViewControllerSpec.swift; sourceTree = "<group>"; };
+		BE44D8EE200B15B100F5B5DF /* BreedsTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BreedsTableViewControllerSpec.swift; sourceTree = "<group>"; };
+		BE44D8EF200B15B100F5B5DF /* PonyTabBarControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PonyTabBarControllerSpec.swift; sourceTree = "<group>"; };
 		F3EB59FD88AD79D430DDF3B5 /* Pods-QuiNi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuiNi.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuiNi/Pods-QuiNi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,10 +136,21 @@
 		BE44D8D7200B0D6F00F5B5DF /* QuiNiTests */ = {
 			isa = PBXGroup;
 			children = (
-				BE44D8D8200B0D6F00F5B5DF /* QuiNiTests.swift */,
+				BE44D8EB200B159000F5B5DF /* Specs */,
 				BE44D8DA200B0D6F00F5B5DF /* Info.plist */,
 			);
 			path = QuiNiTests;
+			sourceTree = "<group>";
+		};
+		BE44D8EB200B159000F5B5DF /* Specs */ = {
+			isa = PBXGroup;
+			children = (
+				BE44D8ED200B15B100F5B5DF /* AppIntroViewControllerSpec.swift */,
+				BE44D8EE200B15B100F5B5DF /* BreedsTableViewControllerSpec.swift */,
+				BE44D8EF200B15B100F5B5DF /* PonyTabBarControllerSpec.swift */,
+				BE44D8EC200B15B000F5B5DF /* QuiNiTests-Bridging-Header.h */,
+			);
+			path = Specs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,7 +379,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE44D8D9200B0D6F00F5B5DF /* QuiNiTests.swift in Sources */,
+				BE44D8F2200B15B200F5B5DF /* PonyTabBarControllerSpec.swift in Sources */,
+				BE44D8F0200B15B200F5B5DF /* AppIntroViewControllerSpec.swift in Sources */,
+				BE44D8F1200B15B200F5B5DF /* BreedsTableViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -530,11 +550,14 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuiNiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lkt.QuiNiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuiNiTests/Specs/QuiNiTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuiNi.app/QuiNi";
@@ -547,11 +570,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = QuiNiTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lkt.QuiNiTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QuiNiTests/Specs/QuiNiTests-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/QuiNi.app/QuiNi";
